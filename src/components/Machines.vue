@@ -1,25 +1,31 @@
 <template>
-  <div class="flex-row">
+  <div class="row">
     <div class="col">
       <h1>Máquinas</h1>
-      <MachineCard
-        v-for="machine in machines"
-        :key="machine.id"
-        :machine="machine"
-        />
+      <div class="d-flex flex-row justify-content-between flex-wrap">
+        <MachineCard
+          v-for="machine in machines"
+          :key="machine.id"
+          :machine="machine"
+          />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import MachineCard from "@/components/partials/MachineCard.vue";
-
-const machines = [{ name: "Betoneira", id: 1, lastStatus: "Working"}]
 
 export default {
   name: "Machines",
   data() {
-    return { machines };
+    return { machines: [] };
+  },
+  mounted() {
+    axios
+      .get("http://192.168.0.8:3000/machines")
+      .then(response => (this.machines = response.data));
   },
   components: {
     MachineCard
