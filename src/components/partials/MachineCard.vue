@@ -35,7 +35,7 @@ export default {
         .then(() => window.location.reload());
     },
     getLastStatus: function(machine) {
-      if(machine.status.length > 0) return machine.status[0].name;
+      if (machine.status.length > 0) return machine.status[0].name;
       return "Nenhum status registrado"
     }
   }
