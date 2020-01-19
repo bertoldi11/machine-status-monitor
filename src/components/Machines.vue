@@ -1,13 +1,15 @@
 <template>
   <div class="row">
     <div class="col">
-      <h1>Máquinas</h1>
+      <router-link to="/machine/new" class="btn btn-primary">
+        Nova Máquina
+      </router-link>
       <div class="d-flex flex-row justify-content-between flex-wrap">
         <MachineCard
           v-for="machine in machines"
           :key="machine.id"
           :machine="machine"
-          />
+        />
       </div>
     </div>
   </div>
@@ -16,6 +18,7 @@
 <script>
 import axios from "axios";
 import MachineCard from "@/components/partials/MachineCard.vue";
+import config from "@/config.js";
 
 export default {
   name: "Machines",
@@ -24,7 +27,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://192.168.0.8:3000/machines")
+      .get(config.apiUrl + "/machines")
       .then(response => (this.machines = response.data));
   },
   components: {

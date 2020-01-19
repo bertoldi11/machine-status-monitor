@@ -17,16 +17,34 @@ const routes = [
       import(/* webpackChunkName: "machines" */ "../views/Machines.vue")
   },
   {
-    path: "/machine/:id",
-    name: "machine",
+    path: "/machine/new",
+    name: "machineNew",
     component: () =>
-      import(/* webpackChunkName: "machine" */ "../views/Machine.vue")
+      import(/* webpackChunkName: "machine" */ "../views/MachineNew.vue")
   },
   {
-    path: "/status",
-    name: "status",
+    path: "/machine/:id",
+    name: "machineEdit",
     component: () =>
-      import(/* webpackChunkName: "status" */ "../views/Status.vue")
+      import(/* webpackChunkName: "machine" */ "../views/MachineEdit.vue")
+  },
+  {
+    path: "/statuses",
+    name: "statuses",
+    component: () =>
+      import(/* webpackChunkName: "status" */ "../views/Statuses.vue")
+  },
+  {
+    path: "/status/new",
+    name: "statusNew",
+    component: () =>
+      import(/* webpackChunkName: "status" */ "../views/StatusNew.vue")
+  },
+  {
+    path: "/status/:id",
+    name: "statusEdit",
+    component: () =>
+      import(/* webpackChunkName: "status" */ "../views/StatusEdit.vue")
   },
   {
     path: "/settings",

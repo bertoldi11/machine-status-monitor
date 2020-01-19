@@ -1,16 +1,16 @@
 <template>
   <div class="machine">
-    <Machine />
+    <MachineNew />
   </div>
 </template>
 
 <script>
-import Machine from "@/components/Machine.vue";
+import MachineNew from "@/components/MachineNew.vue";
 
 export default {
-  name: "machine",
+  name: "machineNew",
   components: {
-    Machine
+    MachineNew
   }
 };
 </script>

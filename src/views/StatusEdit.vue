@@ -1,16 +1,16 @@
 <template>
   <div class="status">
-    <Status />
+    <StatusEdit />
   </div>
 </template>
 
 <script>
-import Status from "@/components/Status.vue";
+import StatusEdit from "@/components/StatusEdit.vue";
 
 export default {
-  name: "status",
+  name: "statusEdit",
   components: {
-    Status
+    StatusEdit
   }
 };
 </script>

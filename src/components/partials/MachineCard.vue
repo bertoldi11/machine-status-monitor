@@ -5,13 +5,15 @@
       <p class="card-text">Ultimo status: {{ machine.lastStatus }}</p>
       <div class="actions">
         <router-link
-          :to="{ name: 'machine', params: { id: machine.id } }"
+          :to="{ name: 'machineEdit', params: { id: machine.id } }"
           class="btn btn-primary"
         >
           Editar
         </router-link>
         &nbsp;
-        <button class="btn btn-danger" v-on:click="deleteMachine(machine)">Excluir</button>
+        <button class="btn btn-danger" v-on:click="deleteMachine(machine)">
+          Excluir
+        </button>
       </div>
     </div>
   </div>

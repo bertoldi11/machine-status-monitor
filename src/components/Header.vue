@@ -23,10 +23,12 @@
           <router-link to="/machines" class="nav-link">Máquinas</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/status" class="nav-link">Status</router-link>
+          <router-link to="/statuses" class="nav-link">Status</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/settings" class="nav-link">ConfiguraçÕes</router-link>
+          <router-link to="/settings" class="nav-link">
+            Configurações
+          </router-link>
         </li>
       </ul>
     </div>
