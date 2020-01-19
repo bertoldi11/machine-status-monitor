@@ -2,7 +2,7 @@
   <div class="card" style="max-width: 25%;">
     <div class="card-body">
       <h5 class="card-title">{{ machine.name }}</h5>
-      <p class="card-text">Ultimo status: {{ machine.lastStatus }}</p>
+      <p class="card-text">Ultimo status: {{ getLastStatus(machine) }}</p>
       <div class="actions">
         <router-link
           :to="{ name: 'machineEdit', params: { id: machine.id } }"
@@ -33,6 +33,10 @@ export default {
       axios
         .delete(config.apiUrl + "/machine/" + machine.id, machine)
         .then(() => window.location.reload());
+    },
+    getLastStatus: function(machine) {
+      if(machine.status.length > 0) return machine.status[0].name;
+      return "Nenhum status registrado"
     }
   }
 };
