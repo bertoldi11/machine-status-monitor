@@ -39,6 +39,7 @@
 
 <script>
 import axios from "axios";
+import config from "@/config.js";
 
 export default {
   name: "Statuses",
@@ -47,13 +48,13 @@ export default {
   },
   mounted() {
     axios
-      .get("http://192.168.0.8:3000/statuses")
+      .get(config.apiUrl + "/statuses")
       .then(response => (this.statuses = response.data));
   },
   methods: {
     deleteStatus: function(status) {
       axios
-        .delete("http://192.168.0.8:3000/status/" + status.id)
+        .delete(config.apiUrl + "/status/" + status.id)
         .then(() => window.location.reload());
     }
   }

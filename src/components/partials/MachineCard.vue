@@ -21,6 +21,7 @@
 
 <script>
 import axios from "axios";
+import config from "@/config.js";
 
 export default {
   name: "MachineCard",
@@ -30,7 +31,7 @@ export default {
   methods: {
     deleteMachine: function(machine) {
       axios
-        .delete("http://192.168.0.8:3000/machine/" + machine.id, machine)
+        .delete(config.apiUrl + "/machine/" + machine.id, machine)
         .then(() => window.location.reload());
     }
   }

@@ -8,6 +8,7 @@
 <script>
 import axios from "axios";
 import StatusForm from "@/components/partials/StatusForm.vue";
+import config from "@/config.js";
 
 export default {
   name: "statusNew",
@@ -20,7 +21,7 @@ export default {
   methods: {
     addStatus: function(status) {
       axios
-        .post("http://192.168.0.8:3000/statuses", status)
+        .post(config.apiUrl + "/statuses", status)
         .then(() => this.$router.push({ name: "statuses" }));
     }
   }
