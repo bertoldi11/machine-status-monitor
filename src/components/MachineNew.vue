@@ -10,6 +10,7 @@
 <script>
 import axios from "axios";
 import MachineForm from "@/components/partials/MachineForm.vue";
+import config from "@/config.js";
 
 export default {
   name: "MachineNew",
@@ -22,7 +23,7 @@ export default {
   methods: {
     addMachine: function(machine) {
       axios
-        .post("http://192.168.0.8:3000/machines", machine)
+        .post(config.apiUrl + "/machines", machine)
         .then(() => this.$router.push({ name: "machines" }));
     }
   }
